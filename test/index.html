@@ -1,0 +1,26 @@
+<!doctype HTML>
+<html>
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <style>
+      html {
+        font-family: 'Roboto', sans-serif;
+      }
+      .divider {
+        height: 1px;
+        width: 100%;
+      }
+    </style>
+    <link rel="stylesheet" href="colors.css">
+  </head>
+  <body m-bg="random" m-hook-bg>
+    <h1 m-hook-color>Test Header</h1>
+    <h2 m-hook-color>Test Subheader</h2>
+    <p m-hook-color="secondary">Secondary</p>
+    <p m-hook-color="disabled">Disabled</p>
+    <p m-hook-color="hint">Hint</p>
+    <div class="divider" m-hook-color-bg="divider"></div>
+    <a m-hook-color href="/">Reload</a>
+    <script src="bundle.min.js"></script>
+  </body>
+</html>
