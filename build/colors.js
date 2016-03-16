@@ -2,6 +2,7 @@ window.colors = {
   "text": {
     "dark": {
       "primary": "rgba(0,0,0,0.87)",
+      "icon": "rgba(0,0,0,0.54)",
       "secondary": "rgba(0,0,0,0.54)",
       "disabled": "rgba(0,0,0,0.38)",
       "hint": "rgba(0,0,0,0.38)",
@@ -9,6 +10,7 @@ window.colors = {
     },
     "light": {
       "primary": "rgba(255,255,255,1)",
+      "icon": "rgba(255,255,255,1)",
       "secondary": "rgba(255,255,255,0.7)",
       "disabled": "rgba(255,255,255,0.5)",
       "hint": "rgba(255,255,255,0.5)",

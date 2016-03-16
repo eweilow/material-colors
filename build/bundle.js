@@ -2,6 +2,7 @@ window.colors = {
   "text": {
     "dark": {
       "primary": "rgba(0,0,0,0.87)",
+      "icon": "rgba(0,0,0,0.54)",
       "secondary": "rgba(0,0,0,0.54)",
       "disabled": "rgba(0,0,0,0.38)",
       "hint": "rgba(0,0,0,0.38)",
@@ -9,6 +10,7 @@ window.colors = {
     },
     "light": {
       "primary": "rgba(255,255,255,1)",
+      "icon": "rgba(255,255,255,1)",
       "secondary": "rgba(255,255,255,0.7)",
       "disabled": "rgba(255,255,255,0.5)",
       "hint": "rgba(255,255,255,0.5)",
@@ -1218,102 +1220,4 @@ window.generateColors = function(element) {
 };
 window.generateColors(document);
 
-/*
-var types = Object.keys(window.colors.typography.light);
-
-for(var key in window.colors.cache) {
-  var el = document.createElement("div");
-  el.setAttribute(BG_DEFINE_ATTRIBUTE, key);
-  
-  var p2 = document.createElement("p");
-  p2.setAttribute(BG_DEFINE_ATTRIBUTE, "white-500");
-  p2.setAttribute(COLOR_DEFINE_ATTRIBUTE, (key.split("-")[0])+"-500");
-  p2.setAttribute("m-hook-bg", "primary");
-  p2.setAttribute("m-hook-color", "primary");
-  p2.innerText = key;
-  el.appendChild(p2);
-  
-  for(var i = 0; i < types.length; i++) {
-    var p = document.createElement("p");
-    p.setAttribute("m-hook-color", types[i]);
-    p.setAttribute("m-hook-bg", "primary");
-    p.innerText = types[i];
-    
-    var p3 = document.createElement("span");
-    p3.setAttribute("m-hook-color-bg", types[i]);
-    p.appendChild(p3);
-    
-    el.appendChild(p);
-  }
-  
-  var p2 = document.createElement("p");
-  p2.setAttribute(BG_DEFINE_ATTRIBUTE, "grey-100");
-  p2.setAttribute(COLOR_DEFINE_ATTRIBUTE, key);
-  p2.setAttribute("m-hook-color", "primary");
-  p2.setAttribute("m-hook-bg", "primary");
-  p2.innerText = key;
-  
-  var p3 = document.createElement("span");
-  p3.setAttribute("m-hook-color-bg", "primary");
-  p2.appendChild(p3);
-  
-  el.appendChild(p2);
-  document.body.appendChild(el);
-}
-
-var start2 = performance.now();
-generateStyle();
-var end2 = performance.now();
-
-var item = document.getElementById("time");
-var start = performance.now();
-runColors(document);
-runBg(document);
-var end = performance.now();
-item.innerText = "Generating colors took " + (end - start).toFixed(2) + "ms, style took " + (end2 - start2).toFixed(2) + "ms";
-*/
-/*
-function frame(){
-  var keys = Object.keys(window.colors.cache);
-  
-  var allbg = document.querySelectorAll("[m-bg]:not([m-color])");
-  for(var i = 0; i < allbg.length; i++) {
-    var initial = allbg[i];
-    
-    initial.setAttribute(BG_DEFINE_ATTRIBUTE, keys[Math.floor(Math.random() * keys.length)]);
-  }
-  
-  var allbg2 = document.querySelectorAll("[m-color]");
-  for(var i = 0; i < allbg2.length; i++) {
-    var initial2 = allbg2[i];
-    
-    initial2.setAttribute(COLOR_DEFINE_ATTRIBUTE, keys[Math.floor(Math.random() * keys.length)]);
-  }
-};
-
-
-var observer = new MutationObserver(function(mutations) {
-  var start = performance.now();
-  for(var i = 0; i < mutations.length; i++) {
-    if(mutations[i].type === "attributes") {
-      if(mutations[i].attributeName === COLOR_DEFINE_ATTRIBUTE) {
-        runColors(mutations[i].target);
-      } else if(mutations[i].attributeName === BG_DEFINE_ATTRIBUTE) {
-        runBg(mutations[i].target);
-      }
-    }
-    
-  }
-  var end = performance.now();
-  item.innerText = "Generating colors took " + (end - start) + "ms";
-}); 
-// configuration of the observer:
-var config = { attributes: true, childList: true, subtree: true, attributeFilter: [BG_DEFINE_ATTRIBUTE, COLOR_DEFINE_ATTRIBUTE] };
-observer.observe(document.body, config);
-
-
-frame();
-
-setInterval(frame, 1000);
-*/
 //# sourceMappingURL=maps/bundle.js.map
