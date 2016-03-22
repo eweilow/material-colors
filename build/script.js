@@ -100,4 +100,14 @@ window.generateColors = function(element) {
   var end = performance.now();
   console.log("Applying colors took: " + (end - start).toFixed(2) + "ms");
 };
-window.generateColors(document);
+if(window.Polymer) {
+  window.addEventListener("WebComponentsReady", function(){
+    window.generateColors(document);
+  });  
+} else if (window.GenerateColorsOnLoad) {
+  window.onload(function(e){
+    window.generateColors(document);
+  });
+} else {
+  window.generateColors(document);
+}
